@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Farabuk</title>
+</head>
+<body>
+<div class="fotky">
+    <h1>Fotky</h1>
+    {% for foto in fotky %}
+    <li>{{ foto.nazev_souboru }}</li>
+    {% endfor %}
+</div>
+</body>
+</html>
+
