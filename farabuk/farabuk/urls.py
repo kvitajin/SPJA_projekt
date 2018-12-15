@@ -20,7 +20,6 @@ import obec.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', obec.views.index, name="index"),
-    path('/<obec>/', obec.views.album, name = 'album'),
     path('<uri>', obec.views.obec_dokument, name='obec'),
     path('<obec>/', obec.views.album, name = 'album'),
 
