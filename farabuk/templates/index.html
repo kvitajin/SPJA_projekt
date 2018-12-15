@@ -8,7 +8,7 @@
 <div class="obce">
     <h1>Obce zapojené do projektu</h1>
     {% for obec in Obce %}
-        <a href={{ obec.nazev }}> {{ obec.nazev }}</a><br>
+        <a href={{ obec.uri }}> {{ obec.nazev }}</a><br>
     {% endfor %}
 </div>
 </body>
