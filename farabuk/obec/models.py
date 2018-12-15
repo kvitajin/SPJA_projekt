@@ -26,7 +26,7 @@ class Foto(models.Model):
     datum = models.DateField(default=datetime.now)
     sirka = models.IntegerField()
     nazev_souboru = models.CharField(max_length=70)
-    popis = models.CharField()
+    popis = models.CharField(max_length=150)
     ck_id_album = models.ForeignKey('Album', on_delete=models.CASCADE)
 
     def __str__(self):
@@ -34,11 +34,11 @@ class Foto(models.Model):
 
 
 class Dokument(models.Model):
-    nadpis = models.CharField()
-    uri = models.CharField()
-    obsah = models.CharField()
+    nadpis = models.CharField(max_length=100)
+    uri = models.CharField(max_length=150)
+    obsah = models.CharField(max_length=10000)
     datum_stazeni = models.DateField()
-    obrazek = models.CharField()
+    obrazek = models.CharField(max_length=70)
     ck_id_obec = models.ForeignKey('Obec', on_delete=models.CASCADE)
 
     def __str__(self):
@@ -46,9 +46,9 @@ class Dokument(models.Model):
 
 
 class Uzivatel(models.Model):
-    nick = models.CharField()
-    heslo = models.CharField()
-    email = models.CharField()
+    nick = models.CharField(max_length=50)
+    heslo = models.CharField(max_length=70)
+    email = models.CharField(max_length=100)
     datum_narozeni = models.DateField()
     ban = models.IntegerField()
     ck_id_obec = models.ForeignKey('Obec', on_delete=models.CASCADE)
