@@ -42,7 +42,7 @@ class Uzivatel(models.Model):
     ck_id_obec = models.ForeignKey('Obec', on_delete=models.CASCADE)
 
 class Komentar(models.Model):
-    obsah = models.CharField(max_lenght=300)
+    obsah = models.CharField(max_lenght=300)ya
     ck_id_uzivatel = models.ForeignKey('Uzivatel', on_delete=models.CASCADE)
     ck_id_dokument = models.ForeignKey('Dokument', on_delete=models.CASCADE)
     ck_id_foto = models.ForeignKey('Foto', on_delete=models.CASCADE)
