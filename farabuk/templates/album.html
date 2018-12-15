@@ -5,11 +5,12 @@
     <title>Farabuk</title>
 </head>
 <body>
-<div class="obce">
-    <h1>Obce zapojené do projektu</h1>
-    {% for obec in Obce %}
-        <a href={{ obec.uri }}> {{ obec.nazev }}</a><br>
+<div class="album">
+    <h1>Alba</h1>
+    {% for album in alba %}
+        <a href={{ album.nazev }}> {{ album.nazev }}</a><br>
     {% endfor %}
 </div>
 </body>
 </html>
+

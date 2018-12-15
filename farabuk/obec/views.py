@@ -5,3 +5,9 @@ from obec.models import Obec, Album, Foto, Dokument, Uzivatel, Komentar
 def index(request):
     Obce = Obec.objects.all()
     return render(request, 'index.html', {'Obce': Obce})
+
+def album(request, obec):
+
+    ob = Obec.objects.get(uri = obec)
+    alba = Album.objects.filter(ck_id_obec = ob.uri)
+    return render(request, 'album.html', {'alba':alba})
