@@ -9,7 +9,7 @@
     <h1> dokumenty obce {{ obec.nazev }}</h1>
 </div>
 {% for i in dokumenty %}
-    {{ i.nadpis }}
+    <a href={{ i.pk }}> {{ i.nadpis }}</a><br>
 {% endfor %}
 
 </body>
