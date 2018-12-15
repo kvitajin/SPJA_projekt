@@ -6,14 +6,9 @@
 </head>
 <body>
 <div class = "nadpis"> </div>
-<h1> dokumenty</h1>
-{% for i in dokumenty %}
-    {{ i.nadpis }}
-{% endfor %}
+<h1> obec {{ obec.nazev }}</h1>
+<a href={{ obec.uri }}/dokumenty>Dokumenty</a><br>
+<a href={{ obec.uri }}/alba>Alba</a>
 
-<h1>alba</h1>
-{% for j in alba %}
-    {{ j.nazev }}
-{% endfor %}
 </body>
 </html>

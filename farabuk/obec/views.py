@@ -10,14 +10,9 @@ def index(request):
 
 
 def album(request, obec):
-    ob = get_object_or_404(Obec, uri = obec)
-    alba = Album.objects.filter(ck_id_obec = ob)
-    return render(request, 'album.html', {'alba':alba})
-
-def foto(request, obec, album):
-    alb = get_object_or_404(Album, nazev = album)
-    fotky = Foto.objects.filter(ck_id_album = alb)
-    return render(request, 'foto.html', {'fotky':fotky})
+    ob = get_object_or_404(Obec, uri=obec)
+    alba = Album.objects.filter(ck_id_obec=ob)
+    return render(request, 'album.html', {'alba': alba})
 
 def get_fk(tmp):
     ck = get_object_or_404(Obec, uri=tmp)
@@ -27,4 +22,9 @@ def get_fk(tmp):
 def obec_dokument(request, uri):
     tmp = get_fk(uri)
     dokumenty = Dokument.objects.filter(ck_id_obec=tmp)
-    return render(request, 'obec.html', {'dokumenty': dokumenty})
+    return render(request, 'dokument.html', {'dokumenty': dokumenty})
+
+
+def obec(request, obec):
+    obc = get_object_or_404(Obec, uri=obec)
+    return render(request, 'obec.html', {'obec': obc})

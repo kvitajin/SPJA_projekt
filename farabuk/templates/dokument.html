@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dokumenty</title>
+</head>
+<body>
+<div class = "nadpis">
+    <h1> dokumenty obce {{ obec.nazev }}</h1>
+</div>
+{% for i in dokumenty %}
+    {{ i.nadpis }}
+{% endfor %}
+
+</body>
+</html>
