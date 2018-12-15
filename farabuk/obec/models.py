@@ -1,20 +1,20 @@
 from django.db import models
 
 from django.db import models
-from datetime import date
+from datetime import datetime
 
 
 class Obec(models.Model):
-    erb = models.CharField(max_lenght=70)
-    nazev = models.CharField(max_lenght=50)
-    uri = models.CharField(max_lenght=50)
+    erb = models.CharField(max_length=70)
+    nazev = models.CharField(max_length=50)
+    uri = models.CharField(max_length=50)
 
     def __str__(self):
         return "{} {} {}".format(self.nazev, self.erb, self.uri)
 
 
 class Album(models.Model):
-    nazev = models.CharFiel(max_lenght=100)
+    nazev = models.CharField(max_length=100)
     je_uvodni = models.IntegerField()
     ck_id_obec = models.ForeignKey ('Obec', on_delete=models.CASCADE)
 
@@ -23,7 +23,7 @@ class Album(models.Model):
 
 
 class Foto(models.Model):
-    datum = models.DateField(default=date.now)
+    datum = models.DateField(default=datetime.now)
     sirka = models.IntegerField()
     nazev_souboru = models.CharField(max_length=70)
     popis = models.CharField()
@@ -58,7 +58,7 @@ class Uzivatel(models.Model):
 
 
 class Komentar(models.Model):
-    obsah = models.CharField(max_lenght=300)
+    obsah = models.CharField(max_length=300)
     ck_id_uzivatel = models.ForeignKey('Uzivatel', on_delete=models.CASCADE)
     ck_id_dokument = models.ForeignKey('Dokument', on_delete=models.CASCADE)
     ck_id_foto = models.ForeignKey('Foto', on_delete=models.CASCADE)
