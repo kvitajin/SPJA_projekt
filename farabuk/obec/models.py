@@ -32,7 +32,7 @@ class Dokument(models.Model):
 class Uzivatel(models.Model):
     nick = models.CharField()
     heslo = models.CharField()
-    emial = models.CharField()
+    email = models.CharField()
     datum_narozeni = models.DateField()
     ban = models.IntegerField()
     ck_id_obec = models.ForeignKey('Obec', on_delete=models.CASCADE)
