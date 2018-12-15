@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', obec.views.index, name="index"),
     path('<uri>', obec.views.obec_dokument, name='obec'),
-    path('<obec>/', obec.views.album, name = 'album'),
+    path('<obec>/alba/', obec.views.album, name = 'album'),
 
 ]
