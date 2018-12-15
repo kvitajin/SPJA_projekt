@@ -23,5 +23,6 @@ urlpatterns = [
     path('<obec>', obec.views.obec, name='obec'),
     path('<uri>/dokumenty/', obec.views.obec_dokument, name='dokument'),
     path('<obec>/alba/', obec.views.album, name = 'album'),
+    path('<obec>/alba/<album>/', obec.views.foto, name = 'fotky'),
 
 ]
