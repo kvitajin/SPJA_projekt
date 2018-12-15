@@ -9,12 +9,10 @@ class Obec(models.Model):
     nazev = models.CharField(max_lenght=50)
     uri = models.CharField(max_lenght=50)
 
-
 class Album(models.Model):
     nazev = models.CharFiel(max_lenght=100)
     je_uvodni = models.IntegerField()
     ck_id_obec = models.ForeignKey ('Obec', on_delete=models.CASCADE)
-
 
 class Foto(models.Model):
     datum = models.DateField(default=date.now)
@@ -23,7 +21,6 @@ class Foto(models.Model):
     popis = models.CharField()
     ck_id_album = models.ForeignKey('Album', on_delete=models.CASCADE)
 
-
 class Dokument(models.Model):
     nadpis = models.CharField()
     uri = models.CharField()
@@ -31,7 +28,6 @@ class Dokument(models.Model):
     datum_stazeni = models.DateField()
     obrazek = models.CharField()
     ck_id_obec = models.ForeignKey('Obec', on_delete=models.CASCADE)
-
 
 class Uzivatel(models.Model):
     nick = models.CharField()
@@ -46,4 +42,3 @@ class Komentar(models.Model):
     ck_id_uzivatel = models.ForeignKey('Uzivatel', on_delete=models.CASCADE)
     ck_id_dokument = models.ForeignKey('Dokument', on_delete=models.CASCADE)
     ck_id_foto = models.ForeignKey('Foto', on_delete=models.CASCADE)
-
