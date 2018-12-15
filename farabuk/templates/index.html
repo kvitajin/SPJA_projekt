@@ -6,9 +6,9 @@
 </head>
 <body>
 <div class="obce">
-    <h1>Obce</h1>
+    <h1>Obce zapojené do projektu</h1>
     {% for obec in Obce %}
-        <li>{{ obec }}</li><br>
+        <a href={{ obec.nazev }}> {{ obec.nazev }}</a><br>
     {% endfor %}
 </div>
 </body>
