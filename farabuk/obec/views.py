@@ -11,10 +11,10 @@ def index(request):
 
 def get_fk(tmp):
     ck = get_object_or_404(Obec, uri=tmp)
-    return ck.pk
+    return ck
 
 
 def obec_dokument(request, uri):
     tmp = get_fk(uri)
-    dokumenty = Dokument.objects.filter(uri=tmp)
+    dokumenty = Dokument.objects.filter(ck_id_obec=tmp)
     return render(request, 'obec.html', {'dokumenty': dokumenty})
