@@ -10,9 +10,8 @@ def index(request):
 
 
 def album(request, obec):
-
-    ob = Obec.objects.get(uri = obec)
-    alba = Album.objects.filter(ck_id_obec = ob.uri)
+    ob = get_object_or_404(Obec, uri = obec)
+    alba = Album.objects.filter(ck_id_obec = ob)
     return render(request, 'album.html', {'alba':alba})
 
 def get_fk(tmp):
