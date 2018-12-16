@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from obec.models import Obec, Album, Foto, Dokument, Uzivatel, Komentar
 from django.http import HttpResponse
+from obec.forms import *
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 # Create your views here.
 
@@ -44,17 +46,33 @@ def doument_detail(request, obec, id):
 
 
 def profil(request):
-    uziv = Uzivatel.objects.get(pk=request.session)
+    uziv = Uzivatel.objects.get(pk=request.session['id'])
     return render(request, 'profil.html', {'uziv': uziv})
 
 
 def prihlas(request):
-    uziv=Uzivatel.objects.get(nick=request.POST['nick'])
-    if uziv.heslo == request.POST['heslo']:
-        request.session['id'] = uziv.id                           #todo tady mozna bude potreba misto uziv.id dat jen uziv
-        HttpResponse('Jste prihlasen')
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            redirect('index')
     else:
-        HttpResponse('Prihlaseni se nezdario')
+        form = AuthenticationForm()
+    return render(request, 'prihlas_butt.html', {'form': form})
+
+
+
+
+        # form = Prihlas(request.POST)
+    #     if form.is_valid():
+    #         uziv = Uzivatel.objects.get(email=form.email)
+    #         if uziv.heslo == request.POST['heslo']:
+    #             request.session['id'] = uziv.id                         #todo tady mozna bude potreba misto uziv.id dat jen uziv
+    #             return HttpResponse('Jste prihlasen')
+    #     else:
+    #         return HttpResponse('Prihlaseni se nezdario')
+    #         pass
+    # else:
+    #     return HttpResponse('o kurwa')
 
 
 def odhlas(request):
@@ -63,3 +81,14 @@ def odhlas(request):
     except KeyError:
         pass
     return HttpResponse("Jste Odhlasen")
+
+
+def registruj(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            redirect('index')
+        else:
+            form = UserCreationForm()
+    return render(request, 'registruj.html', {'form': form})

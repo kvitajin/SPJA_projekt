@@ -22,9 +22,11 @@ urlpatterns = [
     path('', obec.views.index, name="index"),
     path('<obec>', obec.views.obec, name='obec'),
     path('<uri>/dokumenty/', obec.views.obec_dokument, name='dokument'),
-    path('<obec>/alba/', obec.views.album, name = 'album'),
+    path('<obec>/alba/', obec.views.album, name='album'),
     path('<obec>/alba/<album>/', obec.views.foto, name = 'fotky'),
     path('<obec>/dokumenty/<id>', obec.views.doument_detail, name='detail'),
-    path('<profil>', obec.views.profil, name='uyivatel')
+    path('profil/', obec.views.profil, name='profil'),
+    path('prihlas/', obec.views.prihlas, name='prihlas_butt'),
+    path('registruj/', obec.views.registruj, name='registruj'),
 
 ]
