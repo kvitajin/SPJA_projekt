@@ -36,6 +36,14 @@ def foto(request, obec, album):
     fotky = Foto.objects.filter(ck_id_album = alb)
     return render(request, 'foto.html', {'fotky':fotky})
 
+def pridatFoto(request, obec, album):
+    if request.method == 'POST':
+        form = AddFoto(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+    else:
+        form = AddFoto()
+    return render(request, 'addFoto.html', {'form':form})
 
 def get_fk(tmp):
     ck = get_object_or_404(Obec, uri=tmp)
