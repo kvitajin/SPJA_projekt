@@ -24,5 +24,7 @@ urlpatterns = [
     path('<uri>/dokumenty/', obec.views.obec_dokument, name='dokument'),
     path('<obec>/alba/', obec.views.album, name = 'album'),
     path('<obec>/alba/<album>/', obec.views.foto, name = 'fotky'),
+    path('<obec>/dokumenty/<id>', obec.views.doument_detail, name='detail'),
+    path('<profil>', obec.views.profil, name='uyivatel')
 
 ]
