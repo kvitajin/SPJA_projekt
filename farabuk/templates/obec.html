@@ -9,6 +9,9 @@
 <h1> obec {{ obec.nazev }}</h1>
 <a href={{ obec.uri }}/dokumenty>Dokumenty</a><br>
 <a href={{ obec.uri }}/alba>Alba</a>
-
+{#{% if request.session['id'] ==null%}#}
+    <a href=/prihlas/>Přihlaš</a>
+    <a href=/registruj>Registruj se</a>
+{#{% endif %}#}
 </body>
 </html>
