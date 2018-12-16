@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4140aab-f6e0-411d-bcbd-cc23085fc59a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/odhlas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farabuk/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/farabuk/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farabuk/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/farabuk/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obec/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/obec/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obec/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/obec/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obec/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/obec/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/obec.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/obec.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +29,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/obec/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="57">
@@ -122,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/obec.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="285">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -157,11 +149,11 @@
         <option value="$PROJECT_DIR$/templates/registruj.html" />
         <option value="$PROJECT_DIR$/obec/models.py" />
         <option value="$PROJECT_DIR$/farabuk/settings.py" />
-        <option value="$PROJECT_DIR$/templates/obec.html" />
         <option value="$PROJECT_DIR$/farabuk/urls.py" />
         <option value="$PROJECT_DIR$/templates/odhlas.html" />
         <option value="$PROJECT_DIR$/obec/forms.py" />
         <option value="$PROJECT_DIR$/obec/views.py" />
+        <option value="$PROJECT_DIR$/templates/obec.html" />
       </list>
     </option>
   </component>
@@ -280,11 +272,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35044000" />
+    <option name="totallyTimeSpent" value="35287000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25773746" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -306,7 +297,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.32977587" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32977587" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +346,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="potreti" />
     <MESSAGE value="Merge branch 'master' of https://github.com/kvitajin/SPJA_projekt&#10;&#10;# Conflicts:&#10;#&#9;farabuk/farabuk/__pycache__/settings.cpython-37.pyc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/kvitajin/SPJA_projekt&#10;&#10;# Conflicts:&#10;#&#9;farabuk/farabuk/__pycache__/settings.cpython-37.pyc" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/kvitajin/SPJA_projekt&#10;&#10;# Conflicts:&#10;#&#9;farabuk/farabuk/__pycache__/settings.cpython-37.pyc&#10;#&#9;farabuk/farabuk/__pycache__/urls.cpython-37.pyc&#10;#&#9;farabuk/obec/__pycache__/forms.cpython-37.pyc&#10;#&#9;farabuk/obec/__pycache__/models.cpython-37.pyc&#10;#&#9;farabuk/obec/__pycache__/views.cpython-37.pyc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/kvitajin/SPJA_projekt&#10;&#10;# Conflicts:&#10;#&#9;farabuk/farabuk/__pycache__/settings.cpython-37.pyc&#10;#&#9;farabuk/farabuk/__pycache__/urls.cpython-37.pyc&#10;#&#9;farabuk/obec/__pycache__/forms.cpython-37.pyc&#10;#&#9;farabuk/obec/__pycache__/models.cpython-37.pyc&#10;#&#9;farabuk/obec/__pycache__/views.cpython-37.pyc" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/farabuk/models.py" />
@@ -403,42 +395,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/obec.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profil.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obec/functions.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/prihlas_butt.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registruj.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farabuk/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-          <folding>
-            <element signature="e#631#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/odhlas.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -454,6 +412,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/obec/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="35" column="70" lean-forward="true" selection-start-line="35" selection-start-column="70" selection-end-line="35" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/obec/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
@@ -461,6 +429,23 @@
           <folding>
             <element signature="e#0#64#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farabuk/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+          <folding>
+            <element signature="e#631#663#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registruj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -474,13 +459,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obec/models.py">
+    <entry file="file://$PROJECT_DIR$/obec/functions.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profil.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="35" column="70" lean-forward="true" selection-start-line="35" selection-start-column="70" selection-end-line="35" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/obec.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
