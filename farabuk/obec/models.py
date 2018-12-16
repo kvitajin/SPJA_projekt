@@ -9,7 +9,7 @@ from datetime import datetime
 # TextField - pro více textu
 
 class Obec(models.Model):
-    erb = models.CharField(max_length=70)
+    erb = models.ImageField()
     nazev = models.CharField(max_length=50)
     uri = models.CharField(max_length=50)
 
