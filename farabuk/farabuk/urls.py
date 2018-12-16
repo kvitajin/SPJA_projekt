@@ -29,4 +29,5 @@ urlpatterns = [
     path('prihlas/', obec.views.prihlas, name='prihlas_butt'),
     path('registruj/', obec.views.registruj, name='registruj'),
 
+
 ]
