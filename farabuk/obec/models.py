@@ -47,7 +47,7 @@ class Dokument(models.Model):
     ck_id_obec = models.ForeignKey('Obec', on_delete=models.CASCADE)
 
     def __str__(self):
-        return "{}{}{}{}{}{}".format(self.ck_id_obec.nazev, self.nadpis, self.uri, self.obsah, self.datum_stazeni, self.obrazek)
+        return "{}{}{}{}{}{}".format(self.ck_id_obec.nazev, self.nadpis, self.uri, self.obsah, self.datum_pridani, self.obrazek)
 
 
 class Uzivatel(models.Model):
