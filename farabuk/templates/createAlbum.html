@@ -1,0 +1,6 @@
+<h1>Přidat album</h1>
+<form action = "{% url 'create_album' form.instance.id %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type = "submit" value = "Uložit">
+</form>

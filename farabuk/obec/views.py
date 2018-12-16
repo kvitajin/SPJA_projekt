@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from obec.models import Obec, Album, Foto, Dokument, Uzivatel, Komentar
 from django.http import HttpResponse
+from obec.forms import CreateAlbumForm
 
 # Create your views here.
 
@@ -14,6 +15,19 @@ def album(request, obec):
     ob = get_object_or_404(Obec, uri=obec)
     alba = Album.objects.filter(ck_id_obec=ob)
     return render(request, 'album.html', {'alba': alba})
+
+def pridatAlbum(request, obec):
+    if request.method == 'POST':
+        form = CreateAlbumForm(request.POST)
+        if form.is_valid():
+            #save to db
+            instance = form.save(commit = False)
+            instance.je_uvodni = 0
+            instance.save()
+            return redirect('index')
+    else:
+        form = CreateAlbumForm()
+    return render(request, 'createAlbum.html', {'form':form})
 
 
 def foto(request, obec, album):
