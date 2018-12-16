@@ -30,6 +30,7 @@ urlpatterns = [
     path('profil/', obec.views.profil, name='profil'),
     path('prihlas/', obec.views.prihlas, name='prihlas_butt'),
     path('registruj/', obec.views.registruj, name='registruj'),
+    path('odhlas/', obec.views.odhlas, name='odhlas'),
 
 
 ]

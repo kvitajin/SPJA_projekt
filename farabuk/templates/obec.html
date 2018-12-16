@@ -8,10 +8,11 @@
 <div class = "nadpis"> </div>
 <h1> obec {{ obec.nazev }}</h1>
 <a href={{ obec.uri }}/dokumenty>Dokumenty</a><br>
-<a href={{ obec.uri }}/alba>Alba</a>
+<a href={{ obec.uri }}/alba>Alba</a><br>
 {#{% if request.session['id'] ==null%}#}
-    <a href=/prihlas/>Přihlaš</a>
-    <a href=/registruj>Registruj se</a>
+    <a href=/prihlas/>Přihlaš</a><br>
+    <a href=/registruj/>Registruj se</a><br>
+    <a href=/odhlas/>Odhlásit se</a><br>
 {#{% endif %}#}
 </body>
 </html>

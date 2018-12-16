@@ -8,6 +8,7 @@ from datetime import datetime
 # FileField - field pro soubory
 # TextField - pro více textu
 
+
 class Obec(models.Model):
     erb = models.ImageField()
     nazev = models.CharField(max_length=50)
