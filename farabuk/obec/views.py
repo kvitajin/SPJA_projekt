@@ -10,7 +10,6 @@ def index(request):
     Obce = Obec.objects.all()
     return render(request, 'index.html', {'Obce': Obce})
 
-
 def album(request, obec):
     ob = get_object_or_404(Obec, uri=obec)
     alba = Album.objects.filter(ck_id_obec=ob)
