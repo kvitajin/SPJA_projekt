@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import obec.views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,3 +30,5 @@ urlpatterns = [
     path('profil/', obec.views.profil, name='profil')
 
 ]
+
+urlpatterns += staticfiles_urlpatterns()

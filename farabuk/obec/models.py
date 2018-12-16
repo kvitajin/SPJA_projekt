@@ -3,6 +3,10 @@ from django.db import models
 from django.db import models
 from datetime import datetime
 
+# blank = True - nepovinný parametr
+# ImageField - Spceciální field pro fotky
+# FileField - field pro soubory
+# TextField - pro více textu
 
 class Obec(models.Model):
     erb = models.CharField(max_length=70)
@@ -23,7 +27,7 @@ class Album(models.Model):
 
 
 class Foto(models.Model):
-    datum = models.DateField(default=datetime.now)
+    datum = models.DateField(default=datetime.now) # auto_now_add = True
     sirka = models.IntegerField()
     nazev_souboru = models.CharField(max_length=70)
     popis = models.CharField(max_length=150)
