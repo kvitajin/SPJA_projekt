@@ -17,7 +17,7 @@ def album(request, obec):
 
 
 def foto(request, obec, album):
-    alb = get_object_or_404(Album, nazev = album)
+    alb = get_object_or_404(Album, pk = album)
     fotky = Foto.objects.filter(ck_id_album = alb)
     return render(request, 'foto.html', {'fotky':fotky})
 

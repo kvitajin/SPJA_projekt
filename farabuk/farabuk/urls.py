@@ -25,6 +25,6 @@ urlpatterns = [
     path('<obec>/alba/', obec.views.album, name = 'album'),
     path('<obec>/alba/<album>/', obec.views.foto, name = 'fotky'),
     path('<obec>/dokumenty/<id>', obec.views.doument_detail, name='detail'),
-    path('<profil>', obec.views.profil, name='uyivatel')
+    path('profil/', obec.views.profil, name='profil')
 
 ]
