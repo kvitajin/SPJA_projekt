@@ -17,9 +17,22 @@ def album(request, obec):
     alba = Album.objects.filter(ck_id_obec=ob)
     return render(request, 'album.html', {'alba': alba})
 
+def pridatAlbum(request, obec):
+    if request.method == 'POST':
+        form = CreateAlbumForm(request.POST)
+        if form.is_valid():
+            #save to db
+            instance = form.save(commit = False)
+            instance.je_uvodni = 0
+            instance.save()
+            return redirect('index')
+    else:
+        form = CreateAlbumForm()
+    return render(request, 'createAlbum.html', {'form':form})
+
 
 def foto(request, obec, album):
-    alb = get_object_or_404(Album, nazev = album)
+    alb = get_object_or_404(Album, pk = album)
     fotky = Foto.objects.filter(ck_id_album = alb)
     return render(request, 'foto.html', {'fotky':fotky})
 

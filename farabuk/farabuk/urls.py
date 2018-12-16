@@ -16,13 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import obec.views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', obec.views.index, name="index"),
     path('<obec>', obec.views.obec, name='obec'),
     path('<uri>/dokumenty/', obec.views.obec_dokument, name='dokument'),
-    path('<obec>/alba/', obec.views.album, name='album'),
+    path('<obec>/alba/', obec.views.album, name = 'album'),
+    path('<obec>/alba/pridatalbum/', obec.views.pridatAlbum, name = 'create_album'),
     path('<obec>/alba/<album>/', obec.views.foto, name = 'fotky'),
     path('<obec>/dokumenty/<id>', obec.views.doument_detail, name='detail'),
     path('profil/', obec.views.profil, name='profil'),
@@ -31,3 +33,5 @@ urlpatterns = [
 
 
 ]
+
+urlpatterns += staticfiles_urlpatterns()
