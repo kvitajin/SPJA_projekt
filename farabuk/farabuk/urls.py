@@ -37,6 +37,7 @@ urlpatterns = [
     path('odhlas/', obec.views.odhlas, name='odhlas'),
     path('<obec>/dokumenty/pridatdokument/', obec.views.addDocument, name='add_document'),
     # path('obrazky/', obec.views.images,  name='../images/')
+    path('<obec>/alba/<idAlba>/<idFoto>/pridatkomentar/', obec.views.addCommentFoto, name='add_comment_html')
 
 
 ]

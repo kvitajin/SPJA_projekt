@@ -17,6 +17,7 @@ def album(request, obec):
     alba = Album.objects.filter(ck_id_obec=ob)
     return render(request, 'album.html', {'alba': alba})
 
+
 def pridatAlbum(request, obec):
     if request.method == 'POST':
         form = CreateAlbumForm(request.POST)
@@ -28,32 +29,35 @@ def pridatAlbum(request, obec):
             return redirect('album', obec)
     else:
         form = CreateAlbumForm()
-    return render(request, 'createAlbum.html', {'form':form})
+    return render(request, 'createAlbum.html', {'form': form})
 
 
 def foto(request, obec, album):
-    alb = get_object_or_404(Album, pk = album)
-    fotky = Foto.objects.filter(ck_id_album = alb)
-    return render(request, 'foto.html', {'fotky':fotky})
+    alb = get_object_or_404(Album, pk=album)
+    fotky = Foto.objects.filter(ck_id_album=alb)
+    return render(request, 'foto.html', {'fotky': fotky})
+
 
 def komentarFoto(request, obec, album, fotka):
-    foto = get_object_or_404(Foto, pk = fotka)
-    komentare = Komentar.objects.filter(ck_id_foto = foto)
-    return render(request, 'commentFoto.html', {'komentare':komentare})
+    foto = get_object_or_404(Foto, pk=fotka)
+    komentare = Komentar.objects.filter(ck_id_foto=foto)
+    return render(request, 'commentFoto.html', {'komentare': komentare})
+
 
 def pridatFoto(request, obec, album):
     if request.method == 'POST':
         form = AddFoto(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit = False)
-            instance.ck_id_album = get_object_or_404(Album, pk = album)
+            instance.ck_id_album = get_object_or_404(Album, pk=album)
             instance.save()
             return redirect('fotky', obec, album)
         else:
             return HttpResponse('Something is wrong :(')
     else:
         form = AddFoto()
-    return render(request, 'addFoto.html', {'form':form})
+    return render(request, 'addFoto.html', {'form': form})
+
 
 def get_fk(tmp):
     ck = get_object_or_404(Obec, uri=tmp)
@@ -144,3 +148,24 @@ def addDocument(request, obec):
     else:
         form = AddDoc()
     return render(request, 'add_document.html', {'form': form})
+
+
+
+def addCommentFoto(request, obec, idAlba, idFoto):
+    if request.method == "POST":
+        form = AddCommentFoto(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.ck_id_uzivatel = get_object_or_404(Uzivatel, pk=1)
+            instance.ck_id_foto = get_object_or_404(Foto, pk=idFoto)
+            instance.ck_id_dokument = get_object_or_404(Dokument, pk =1)
+            instance.save()
+            return redirect('index')
+    else:
+        form = AddCommentFoto()
+    return render(request, 'add_comment_foto.html', {'form': form})
+
+
+def images(request):
+    return None
+

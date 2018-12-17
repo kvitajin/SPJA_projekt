@@ -9,7 +9,9 @@
 <small>{{ clanek.datum_pridani }}</small><br>
 <p>
     {{ clanek.obsah }}<br>
-    <img src="../../images/{{ clanek.obrazek }}" width="1000wv"/>
+    {% if clanek.obrazek %}
+        <img src="../../images/{{ clanek.obrazek }}" width="1000wv"/>
+    {% endif %}
 </p>
 </body>
 </html>

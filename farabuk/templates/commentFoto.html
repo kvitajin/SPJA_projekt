@@ -8,7 +8,7 @@
 <div class="komentare">
     <h1>Komentare</h1>
     {% for komentar in komentare %}
-        <a href={{ komentar.pk }}> {{ komentar.pk }}</a><br>
+         {{ komentar.obsah }}<br><br>
     {% endfor %}
     <a href={{ "pridatkomentar" }}>Přidat komentář</a>
 </div>

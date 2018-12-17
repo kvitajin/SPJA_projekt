@@ -33,3 +33,9 @@ class AddDoc(forms.ModelForm):
     class Meta:
         model = Dokument
         fields = ['nadpis', 'uri', 'obsah', 'obrazek']
+
+
+class AddCommentFoto(forms.ModelForm):
+    class Meta:
+        model = Komentar
+        fields = ['obsah']
