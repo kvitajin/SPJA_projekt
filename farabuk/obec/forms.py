@@ -32,4 +32,4 @@ class AddFoto(forms.ModelForm):
 class AddDoc(forms.ModelForm):
     class Meta:
         model = Dokument
-        fields = ['nadpis', 'uri', 'obsah', 'obrazek', 'ck_id_obec']
+        fields = ['nadpis', 'uri', 'obsah', 'obrazek']
