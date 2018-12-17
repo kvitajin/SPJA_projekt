@@ -144,3 +144,7 @@ def addDocument(request, obec):
     else:
         form = AddDoc()
     return render(request, 'add_document.html', {'form': form})
+
+
+def images(request):
+    return None
