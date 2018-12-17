@@ -131,10 +131,10 @@ def addDocument(request, obec):
     if request.method == "POST":
         form = AddDoc(request.POST)
         instance = form.save(commit=False)
-        obec_id = get_object_or_404(Obec, nazev=obec)
+        obec_id = get_object_or_404(Obec, uri=obec)
         instance.ck_id_album = obec_id
         instance.save()
         return redirect('index')
     else:
         form = AddDoc()
-    return render(request, 'add_document.html', {'addDoc': form})
+    return render(request, 'add_document.html', {'form': form})

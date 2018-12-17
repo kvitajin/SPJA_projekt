@@ -26,12 +26,13 @@ urlpatterns = [
     path('<obec>/alba/', obec.views.album, name = 'album'),
     path('<obec>/alba/pridatalbum/', obec.views.pridatAlbum, name = 'create_album'),
     path('<obec>/alba/<album>/', obec.views.foto, name = 'fotky'),
-    path('<obec>/alba/<album>/pridatfotku/', obec.views.pridatFoto, name = 'add_foto'),
+    path('<obec>/alba/<album>/pridatfotku/', obec.views.pridatFoto, name='add_foto'),
     path('<obec>/dokumenty/<id>', obec.views.doument_detail, name='detail'),
     path('profil/', obec.views.profil, name='profil'),
     path('prihlas/', obec.views.prihlas, name='prihlas_butt'),
     path('registruj/', obec.views.registruj, name='registruj'),
     path('odhlas/', obec.views.odhlas, name='odhlas'),
+    path('<obec>/dokumenty/pridatdokument/', obec.views.addDocument, name='add_document'),
 
 
 ]
