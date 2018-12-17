@@ -2,11 +2,13 @@ from django.db import models
 
 from django.db import models
 from datetime import datetime
+import datetime
 
 # blank = True - nepovinný parametr
 # ImageField - Spceciální field pro fotky
 # FileField - field pro soubory
 # TextField - pro více textu
+
 
 class Obec(models.Model):
     erb = models.ImageField()
@@ -14,7 +16,7 @@ class Obec(models.Model):
     uri = models.CharField(max_length=50)
 
     def __str__(self):
-        return "{} {} {}".format(self.nazev, self.erb, self.uri)
+        return "{}".format(self.nazev)
 
 
 class Album(models.Model):
@@ -23,12 +25,12 @@ class Album(models.Model):
     ck_id_obec = models.ForeignKey ('Obec', on_delete=models.CASCADE)
 
     def __str__(self):
-        return "{}{}{}".format(self.ck_id_obec.nazev, self.nazev, self.je_uvodni)
+        return "{}{}".format(self.nazev, self.pk)
 
 
 class Foto(models.Model):
-    datum = models.DateField(auto_now_add = True) # auto_now_add = True
-    sirka = models.IntegerField(blank = True)
+    datum = models.DateField(default = datetime.date.today) # auto_now_add = True
+    sirka = models.IntegerField(blank = True, default = 0)
     nazev_souboru = models.CharField(max_length=70)
     soubor = models.ImageField(blank = True)
     popis = models.CharField(max_length=150, blank = True)
@@ -42,7 +44,7 @@ class Dokument(models.Model):
     nadpis = models.CharField(max_length=100)
     uri = models.CharField(max_length=150)
     obsah = models.TextField()
-    datum_pridani = models.DateField(default = datetime.now)
+    datum_pridani = models.DateField(default = datetime.date.today)
     obrazek = models.ImageField(blank = True)
     ck_id_obec = models.ForeignKey('Obec', on_delete=models.CASCADE)
 

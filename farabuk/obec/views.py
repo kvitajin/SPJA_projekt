@@ -25,7 +25,7 @@ def pridatAlbum(request, obec):
             instance = form.save(commit = False)
             instance.je_uvodni = 0
             instance.save()
-            return redirect('index')
+            return redirect('album', obec)
     else:
         form = CreateAlbumForm()
     return render(request, 'createAlbum.html', {'form':form})
@@ -40,7 +40,12 @@ def pridatFoto(request, obec, album):
     if request.method == 'POST':
         form = AddFoto(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            instance = form.save(commit = False)
+            instance.ck_id_album = get_object_or_404(Album, pk = album)
+            instance.save()
+            return redirect('fotky', obec, album)
+        else:
+            return HttpResponse('Something is wrong :(')
     else:
         form = AddFoto()
     return render(request, 'addFoto.html', {'form':form})
@@ -75,13 +80,13 @@ def prihlas(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
+            uziv = Uzivatel.objects.get(nick=request.POST['username'])
+            request.session['id'] = uziv.pk
+            request.session['ban'] = uziv.ban
             redirect('index')
     else:
         form = AuthenticationForm()
     return render(request, 'prihlas_butt.html', {'form': form})
-
-
-
 
         # form = Prihlas(request.POST)
     #     if form.is_valid():
@@ -101,15 +106,22 @@ def odhlas(request):
         del request.session['id']
     except KeyError:
         pass
-    return HttpResponse("Jste Odhlasen")
+    return redirect('index')
 
 
 def registruj(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            redirect('index')
-        else:
-            form = UserCreationForm()
+        form = Registruj(request.POST)
+        # nick = form.cleaned_data['nick']
+        # heslo =form.cleaned_data['heslo']
+        # email=form.cleaned_data['email']
+        # ban =form.cleaned_data['ban']
+        # datum_narozeni =form.cleaned_data['datum_narozeni']
+        # ck_id_obec =
+        instance=form.save(commit=False)
+        instance.ban = 0
+        instance.save()
+        return redirect('index')
+    else:
+        form = Registruj()
     return render(request, 'registruj.html', {'form': form})
