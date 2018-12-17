@@ -8,7 +8,7 @@
 <div class="fotky">
     <h1>Fotky</h1>
     {% for foto in fotky %}
-      <li>{{ foto.nazev_souboru }}</li>
+        <a href={{ foto.pk}}> {{ foto.nazev_souboru }}</a><br>
     {% endfor %}
     <a href={{ "pridatfotku" }}>Přidat novou fotku</a>
 </div>

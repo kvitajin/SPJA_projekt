@@ -36,6 +36,11 @@ def foto(request, obec, album):
     fotky = Foto.objects.filter(ck_id_album = alb)
     return render(request, 'foto.html', {'fotky':fotky})
 
+def komentarFoto(request, obec, album, fotka):
+    foto = get_object_or_404(Foto, pk = fotka)
+    komentare = Komentar.objects.filter(ck_id_foto = foto)
+    return render(request, 'commentFoto.html', {'komentare':komentare})
+
 def pridatFoto(request, obec, album):
     if request.method == 'POST':
         form = AddFoto(request.POST, request.FILES)

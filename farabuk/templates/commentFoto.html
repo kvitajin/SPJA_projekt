@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Farabuk</title>
+</head>
+<body>
+<div class="komentare">
+    <h1>Komentare</h1>
+    {% for komentar in komentare %}
+        <a href={{ komentar.pk }}> {{ komentar.pk }}</a><br>
+    {% endfor %}
+    <a href={{ "pridatkomentar" }}>Přidat komentář</a>
+</div>
+</body>
+</html>
