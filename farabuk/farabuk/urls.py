@@ -33,6 +33,7 @@ urlpatterns = [
     path('prihlas/', obec.views.prihlas, name='prihlas_butt'),
     path('registruj/', obec.views.registruj, name='registruj'),
     path('odhlas/', obec.views.odhlas, name='odhlas'),
+    path('<obec>/dokumenty/pridatdokument/', obec.views.addDocument, name='add_document'),
 
 
 ]

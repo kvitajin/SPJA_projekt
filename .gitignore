@@ -1,3 +1,5 @@
-farabuk/farabuk/__pycache__
-farabuk/obec/__pycache__
-farabuk/.idea
+farabuk/farabuk/__pycache__/
+farabuk/obec/__pycache__/
+farabuk/.idea/
+farabuk/obec/migrations/__pycache__/
+
