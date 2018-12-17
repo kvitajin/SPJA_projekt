@@ -6,6 +6,10 @@
 </head>
 <body>
     <h1> Nový dokument</h1>
-{%  %}
+<form action="{% url 'addDocument' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="Registruj">
+</form>
 </body>
 </html>
