@@ -8,6 +8,7 @@
 <div class="fotky">
     <h1>Fotky</h1>
     {% for foto in fotky %}
+        <img src="../../../images/{{ foto.soubor }}" width="500" height="250"/><br>
         <a href={{ foto.pk}}> {{ foto.nazev_souboru }}</a><br>
     {% endfor %}
     <a href={{ "pridatfotku" }}>Přidat novou fotku</a>
