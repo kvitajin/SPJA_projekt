@@ -66,9 +66,9 @@ class Uzivatel(models.Model):
 
 class Komentar(models.Model):
     obsah = models.TextField()
-    ck_id_uzivatel = models.ForeignKey('Uzivatel', on_delete=models.CASCADE)
-    ck_id_dokument = models.ForeignKey('Dokument', on_delete=models.CASCADE, blank=True)
-    ck_id_foto = models.ForeignKey('Foto', on_delete=models.CASCADE, blank=True)
+    ck_id_uzivatel = models.ForeignKey('Uzivatel', on_delete=models.CASCADE, null=True)
+    ck_id_dokument = models.ForeignKey('Dokument', on_delete=models.CASCADE, null=True)
+    ck_id_foto = models.ForeignKey('Foto', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return "{}{}{}{}".format(self.ck_id_uzivatel.nick, self.obsah, self.ck_id_dokument, self.ck_id_foto)

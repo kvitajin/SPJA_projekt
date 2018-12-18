@@ -144,7 +144,7 @@ def addDocument(request, obec):
             obec_id = get_object_or_404(Obec, uri=obec)
             instance.ck_id_obec = obec_id
             instance.save()
-            return redirect('index')
+            return redirect('dokument', obec)
     else:
         form = AddDoc()
     return render(request, 'add_document.html', {'form': form})
@@ -156,11 +156,9 @@ def addCommentFoto(request, obec, idAlba, idFoto):
         form = AddCommentFoto(request.POST)
         if form.is_valid():
             instance = form.save(commit=False)
-            instance.ck_id_uzivatel = get_object_or_404(Uzivatel, pk=1)
             instance.ck_id_foto = get_object_or_404(Foto, pk=idFoto)
-            instance.ck_id_dokument = get_object_or_404(Dokument, pk =1)
             instance.save()
-            return redirect('index')
+            return redirect('fotky', obec, idAlba)
     else:
         form = AddCommentFoto()
     return render(request, 'add_comment_foto.html', {'form': form})
@@ -168,4 +166,3 @@ def addCommentFoto(request, obec, idAlba, idFoto):
 
 def images(request):
     return None
-
